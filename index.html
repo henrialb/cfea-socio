@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="includes/css/style.css" rel="stylesheet">
+    <!-- <script src="https://kit.fontawesome.com/03a688feb9.js" crossorigin="anonymous"></script> -->
+    <title>CFEA – Faz-te Sócio</title>
+  </head>
+  <body>
+    <div id="main-banner" class="banner">
+      <img id="simbolo" src="includes/images/cfea.svg" alt="" width="50px">
+      <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+        <!-- <a class="navbar-brand" href="#"><img src="includes/images/cfea.svg" alt="" width="50px"></a> -->
+        <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center justify-content-end" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="https://loja.cfeamadora.pt" target="_blank">Loja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#condicoes">Condições</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container">
+        <h1>Somos <strong class="title-highlight">Estrela</strong></h1>
+        <h1>Somos <strong class="title-highlight">Amadora</strong></h1>
+        <p>O Clube da nossa cidade precisa de ti para crescer!</p>
+        <a id="btn-ser-socio" class="btn btn-gradient mt-4" href="#ser-socio">Faz-te sócio</a>
+      </div>
+    </div>
+
+    <!-- Formulário -->
+    <div class="container my-5 py-5" id="ser-socio">
+      <div id="flex" class="col-md-10 col-lg-8">
+        <form action="validar.php" method="post" class="needs-validation" novalidate>
+          <p>Preenche o formulário para seres sócio do Estrela da Amadora.</p>
+          <div class="row">
+            <div class="form-group py-1 col-md-12">
+              <label for="nome" class="label">Nome</label>
+              <input type="text" id="nome" class="form-control" name="nome_atleta" required>
+              <div class="invalid-feedback">Os campos assinalados a vermelho são de preenchimento obrigatório.</div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group py-1 col-md-6">
+              <label for="data_nascimento" class="label">Data de nascimento</label>
+              <!-- <input type="text" id="data_nascimento" class="form-control <?php echo (!empty($date_err)) ? 'is-invalid' : ''; ?>" name="data_nascimento" value="<?php echo $date; ?>" required /> -->
+              <input type="text" id="data_nascimento" class="form-control <?php echo (!empty($date_err)) ? 'is-invalid' : ''; ?>" name="data_nascimento" value="" required />
+            </div>
+            <div class="form-group py-1 col-md-6">
+              <label for="sexo" class="label">Sexo</label>
+              <select id="sexo" class="form-control" name="sexo">
+                <option></option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+              </select>
+            </div>
+            <!-- <div class="form-group py-1 col-md-4">
+              <label for="" class="label">Categoria</label>
+              <select id="categoria" class="form-control" name="categoria" disabled>
+                <option></option>
+                <option selected>Efectivo</option>
+                <option>Menor</option>
+                <option>Sénior</option>
+              </select>
+            </div> -->
+          </div>
+          <div class="row">
+            <div class="form-group py-1 col-md-4">
+              <label for="" class="label">Nacionalidade</label>
+              <input type="text" id="" class="form-control" name="nacionalidade" required>
+            </div>
+            <div class="form-group py-1 col-md-4">
+              <label for="no_id" class="label">Número identificação (CC/BI)</label>
+              <input type="text" id="no_id" class="form-control" name="no_id" required>
+            </div>
+            <div class="form-group py-1 col-md-4">
+              <label for="nif" class="label">NIF</label>
+              <input type="text" id="nif" class="form-control" name="nif" required>
+            </div>
+          </div>
+          <div class="form-group py-1">
+            <label for="morada" class="label">Morada</label>
+            <input type="text" id="morada" class="form-control" name="morada" required>
+          </div>
+          <div class="row">
+            <div class="form-group py-1 col-md-6">
+              <label for="cod_postal" class="label">Código Postal</label>
+              <input type="text" id="cod_postal" class="form-control" name="cod_postal" required>
+            </div>
+            <div class="form-group py-1 col-md-6">
+              <label for="localidade" class="label">Localidade</label>
+              <input type="text" id="localidade" class="form-control" name="localidade" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group py-1 col-md-6">
+              <label for="email" class="label">Email</label>
+              <input type="email" id="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group py-1 col-md-6">
+              <label for="telemovel" class="label">Telemóvel</label>
+              <input type="text" id="telemovel" class="form-control" name="telemovel" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="form-group py-1 col-md-6">
+              <label for="nome_cartao" class="label">Nome no cartão de sócio</label>
+              <input type="text" id="nome_cartao" class="form-control" name="nome_cartao" placeholder="(opcional)">
+            </div>
+            <div class="form-group py-1 col-md-6">
+              <label for="fotografia" class="label">Fotografia tipo-passe</label>
+              <input class="upload-file" type='file' class="my-2"/>
+              <!-- <div class="fileUpload btn btn-primary">
+                <span>Upload</span>
+                <input type="file" class="upload" />
+              </div> -->
+            </div>
+            <small class="text-secondary">Se não preencher o cartão terá o nome completo</small>
+          </div>
+          <div id="cartao-socio" class="mt-5">
+            <div id="cartao">
+              <img id="foto-socio" height="80px" src="includes/images/profile_empty.png">
+              <div id="nome_cartao_preview" class="form-group py-1 col-md-6 text-secondary">João Gomes</div>
+              <div id="categoria_preview" class="form-group py-1 col-md-6 text-secondary">Sócio Efectivo</div>
+            </div>
+          </div>
+          <div class="row">
+          </div>
+
+          <!-- <hr class="my-4"> -->
+          <div class="bg-light mt-4 px-1 pt-2 pb-1" style="display: none;">
+            <h4 class="mb-3">Pais/tutores</h4>
+            <!-- Pais / tutores -->
+            <div class="row">
+              <div class="form-group py-1 col-md-9">
+                <!-- Pai/tutor -->
+                <input type="text" class="form-control" placeholder="Pai/tutor" name="nome_pai" id="nome_pai">
+              </div>
+              <div class="form-group py-1 col-md-3">
+                  <!-- Número sócio pai -->
+                  <input type="text" class="form-control" placeholder="Nº sócio" name="no_socio_pai">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="form-group py-1 col-md-4">
+                <!-- Profissão -->
+                <input type="text" class="form-control" placeholder="Profissão" name="profissao_pai">
+              </div>
+              <div class="form-group py-1 col-md-4">
+                <!-- Contacto -->
+                <input type="text" class="form-control" placeholder="Contacto" name="contacto_pai">
+              </div>
+              <div class="form-group py-1 col-md-4">
+                <!-- E-mail -->
+                <input type="email" class="form-control" placeholder="E-mail" name="email_pai">
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group py-1 col-md-9">
+                <!-- Mãe/tutor -->
+                <input type="text" class="form-control" placeholder="Mãe/tutor" name="nome_mae" id="nome_mae">
+              </div>
+              <div class="form-group py-1 col-md-3">
+                <!-- Número sócio mãe -->
+                <input type="text" class="form-control" placeholder="Nº sócio" name="no_socio_mae">
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="form-group py-1 col-md-4">
+                <!-- Profissão -->
+                <input type="text" class="form-control" placeholder="Profissão" name="profissao_mae">
+              </div>
+              <div class="form-group py-1 col-md-4">
+                <!-- Contacto -->
+                <input type="text" class="form-control" placeholder="Contacto" name="contacto_mae">
+              </div>
+              <div class="form-group py-1 col-md-4">
+                <!-- E-mail -->
+                <input type="email" class="form-control" placeholder="E-mail" name="email_mae">
+              </div>
+            </div>
+            <div class="form-group py-1" name="responsavel">
+              <h6>Primeiro contacto</h6>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="responsavel" value="1"><span class="show_nome_pai">Pai</span>
+                </label>
+              </div>
+              <div class="form-check disabled">
+                <label class="form-check-label">
+                  <input type="radio" class="form-check-input" name="responsavel" value="2"><span class="show_nome_mae">Mãe</span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mt-3 py-3 form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" required> <small class="text-secondary">Aceito que os meus dados pessoais sejam recolhidos e tratados, de acordo com a <a href="https://www.cdestrela.pt/Documentos/PoliticaPrivacidade%20CDE%20-%20RGPD.pdf" target="_blank">Política de Privacidade</a>.</small>
+            </label>
+          </div>
+          <button type="submit" class="btn btn-gradient">Avançar</button>
+        </form>
+      </div>
+    </div>
+      <!-- Fim do formulário -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="includes/css/bootstrap-datepicker3.css" />
+    <script type="text/javascript" src="includes/js/bootstrap-datepicker.min.js"></script>
+    <script src="includes/js/bootstrap-datepicker.pt.min.js"></script>
+    <script type="text/javascript">
+      // Disable form submissions if there are invalid fields
+      (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+          // Get the forms we want to add validation styles to
+          var forms = document.getElementsByClassName('needs-validation');
+          // Loop over them and prevent submission
+          var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+              if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add('was-validated');
+            }, false);
+          });
+        }, false);
+      })();
+
+      // Mostrar nome que vai aparecer no cartão
+      $(document).ready(function() {
+        var nome = $('#nome').val();
+        var nomeCartao = $('#nome_cartao').val();
+        var defaultName = "João Gomes";
+        $('#nome').keyup(function() {
+          nome = $(this).val();
+          if(nomeCartao === "" && nome !== "") {
+            $('#nome_cartao_preview').text(nome);
+          }
+          else if(nomeCartao === "" && nome === "") {
+            $('#nome_cartao_preview').text(defaultName);
+          }
+        });
+        $('#nome_cartao').keyup(function() {
+          nomeCartao = $(this).val();
+          if(nomeCartao === "") {
+            if(nome !== "") {
+              $('#nome_cartao_preview').text(nome);
+            }
+            else {
+              $('#nome_cartao_preview').text(defaultName);
+            }
+          }
+          else {
+            $('#nome_cartao_preview').text(nomeCartao);
+          }
+        });
+      });
+
+      // Date picker
+      $(document).ready(function() {
+        var date_input = $('input[name="data_nascimento"]'); //our date input has the name "date"
+        var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
+        var today = new Date();
+        var firstdate = new Date('2002-01-01');
+        // firstdate.setDate(today.getDate() + 1);
+        date_input.datepicker({
+          format: 'dd-mm-yyyy',
+          container: container,
+          todayHighlight: false,
+          autoclose: true,
+          weekStart: 1,
+          language: "pt",
+          orientation: "top auto",
+          startDate: firstdate,
+        })
+      })
+
+      // Mostrar a foto do utilizador
+      $(function () {
+        $(":file").change(function () {
+          if (this.files && this.files[0]) {
+            var reader = new FileReader();
+            reader.onload = imageIsLoaded;
+            reader.readAsDataURL(this.files[0]);
+          }
+        });
+      });
+      function imageIsLoaded(e) {
+        $('#foto-socio').attr('src', e.target.result);
+      };
+    </script>
+  </body>
+</html>
